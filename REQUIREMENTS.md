@@ -74,3 +74,40 @@ const books: Book[] = [{
   rating: 8.4,
  }];
 ```
+
+# Requirements 3
+We're going to build a simple expense tracker to keep track of expenses month over month
+
+We need to build
+1. A way to view expenses in card/table view
+2. A way to log expenses
+3. A way for a user to search/filter expenses
+4. A way to view a summary of total expenses by category (for a date range)
+
+You can use the sample model and JSON below to represent an expense, but feel free to update the model/example as needed
+```
+export type ExpenseCategory =  'Food' | 'Transportation' | 'Entertainment' | 'Utilities' | 'Other';
+export type PaymentMethod = 'Cash' | 'Credit Card' | 'Debit Card' | 'Bank Transfer';
+
+export interface Expense {
+  id: number; 
+  description: string; 
+  amount: number; 
+  category: ExpenseCategory;
+  date: string; // Date the expense was incurred
+  paymentMethod?: PaymentMethod;
+  notes?: string;
+}
+
+const expenses: Expense[] = [
+  {
+    id: 1,
+    description: 'Dinner at restaurant',
+    amount: 50.75,
+    category: 'Food',
+    date: '2024-01-15',
+    paymentMethod: null,
+    notes: 'Birthday dinner with friends',
+  }
+];
+```
